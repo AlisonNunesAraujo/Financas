@@ -1,16 +1,31 @@
-import React from "react";
-import { View, Text, StyleSheet,TextInput, TouchableOpacity } from 'react-native'
+import React, { useContext } from "react";
+import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native'
 
-export default function SingUp(){
-    return(
+import { AuthContext } from "../../contexts/auth"; 
+
+
+
+export default function SingUp() {
+
+    const { user } = useContext(AuthContext)
+    
+    function  hendle(){
+        console.log( user.nome )
+        
+    }
+
+   
+    return (
         <View style={styles.container}>
             <Text style={styles.title}>Criar Conta</Text>
 
-            <TextInput placeholder="Nome" style={styles.TextInput}/>
+            <TextInput placeholder="Nome" style={styles.TextInput} />
             <TextInput placeholder="EMAIL" style={styles.TextInput} />
             <TextInput placeholder="SENHA" style={styles.TextInput} />
-            
-            <TouchableOpacity style={styles.buttom}>
+
+            <Text></Text>
+
+            <TouchableOpacity style={styles.buttom} onPress={hendle}>
                 <Text style={styles.titlebuttom}>Cadastrar</Text>
             </TouchableOpacity>
 
@@ -19,13 +34,13 @@ export default function SingUp(){
 }
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#808080'
     },
-    title:{
+    title: {
         fontSize: 35,
         color: 'white'
     },
@@ -41,7 +56,7 @@ const styles = StyleSheet.create({
 
     },
 
-    buttom:{
+    buttom: {
         backgroundColor: 'blue',
         width: '50%',
         height: 50,
@@ -50,7 +65,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    titlebuttom:{
+    titlebuttom: {
         color: 'white',
         fontSize: 20,
     },

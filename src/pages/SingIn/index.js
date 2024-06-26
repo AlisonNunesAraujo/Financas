@@ -1,7 +1,10 @@
 import React from "react";
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, StatusBar } from 'react-native';
+
+
 
 import { useNavigation } from "@react-navigation/native";
+
 
 export default function SingIn() {
 
@@ -11,7 +14,10 @@ export default function SingIn() {
         <View style={styles.Container}>
 
             <View style={styles.Area}>
-                <Text style={{ fontSize: 35, color: 'white' }}>Bem Vindo</Text>
+
+                <StatusBar backgroundColor="black" barStyle="ligth"/>
+
+                <Text style={{ fontSize: 35, color: 'white' }}>Bem Vindo!</Text>
 
                 <Text style={styles.textlogin}>LOGIN</Text>
                 <TextInput placeholder="EMAIL" style={styles.TextInput} />
